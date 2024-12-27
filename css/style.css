@@ -7,7 +7,7 @@ body{
     align-items: center;
     justify-content: center;
    
-    background-image: url('background.jpg'), url('background.jpg');
+    background-image: url('../images/background.jpg'), url('../images/background.jpg');
     background-repeat: no-repeat, no-repeat; /* Не повторять ни одно из изображений */
     background-position: left center, right center; /* Первое слева, второе справа */
     background-position: calc(0% + 80px) center, calc(100% - 80px) center;
