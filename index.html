@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лист персонажа Шиноби</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css ">
+    <script src="js/main.js" defer></script>
+    </head>
+<body>
+
+<button id="clearStorage">Очистить данные</button>
+
+<div class="parent">
+<div class="child">
+        <div style="display: flex;">
+    <div class= "name">
+        <span>Имя</span><br>
+        <input id="name" type="text" maxlength="30">
+    </div>
+      <div class="division"></div>
+    <div class="concept">
+        <span>Концепт</span><br>
+        <input id="concept"  type="text" maxlength="30">
+    </div>
+</div>
+
+<div class="division"></div>
+
+<div style="display: flex;">
+    <div class="clothes">
+        <span>Одежда</span><br>
+        <input id="clothes" type="text" maxlength="30">
+      </div>
+      <div class="division"></div>
+    <div class="feature">
+        <span>Отличительная черта</span><br>
+        <input id="feature" type="text" maxlength="30">
+    </div>
+</div>
+<div class="division"></div>
+
+<div style="display: flex;">
+    <div class="motivation">
+        <span>Мотивация</span><br>
+        <input id="motivation" type="text" maxlength="30">
+      </div>
+      <div class="division"></div>
+      <div class="problem">
+        <span>Личная проблема</span><br>
+        <input id="problem" type="text" maxlength="30">
+    </div>
+</div>
+
+<div class="division"></div>
+
+<div style="display: flex;">
+    <div style="display: block;">
+    <div class="conceptskill">
+        <span>Навык концепта</span><br>
+        <input id="conceptskill" type="text" maxlength="30">
+      </div>
+    <div class="division"></div>
+    <div class="skills">
+    <span>Навыки</span><br>
+    <ol>
+        <li>
+            <input class="under" id="skill1" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="skill2" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="skill3" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="skill4" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="skill5" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="skill6" type="text" maxlength="30">
+        </li>
+    </ol>
+    </div>
+    </div>
+
+<div class="division"></div>
+    
+<div class="augmentations">
+    <span>Аугментации</span>
+    <ol>
+        <li>
+            <input class="under" id="augmentation1" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation2" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation3" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation4" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation5" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation6" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation7" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation8" type="text" maxlength="30">
+        </li>
+        <li>
+            <input class="under" id="augmentation9" type="text" maxlength="30">
+        </li>
+    </ol>
+    
+
+    
+</div>
+
+</div>
+<div class= "fight">
+    <span>Бой</span><br>
+
+    <div class="container">
+        <div class="header">
+            <span class="weapons">Оружие</span>
+            <span class="weapons">Урон</span>
+            <span class="weapons">Дальность</span>
+            <span class="weapons">Обойма</span>
+            <span class="weapons">Примечания</span>
+        </div>
+      <textarea cols="23" rows="3" maxlength="180" placeholder="Ваше оружие" class="textweapons" id="weapons"></textarea>
+    </div>
+
+
+
+
+
+<div class="damage">Текущий урон:</div>
+<div class="checkboxes">
+    <input type="checkbox" id="checkbox1" class="checkbox-round" />
+    <input type="checkbox" id="checkbox2" class="checkbox-round" />
+    <input type="checkbox" id="checkbox3" class="checkbox-round" />
+    <div class="divider"></div>
+    <input type="checkbox" id="checkbox5" class="checkbox-round" />
+    <input type="checkbox" id="checkbox6" class="checkbox-round" />
+    <input type="checkbox" id="checkbox7" class="checkbox-round" />
+    <input type="checkbox" id="checkbox8" class="checkbox-round" />
+    <div class="divider"></div>
+    <input type="checkbox" id="checkbox9" class="checkbox-round" />
+    <input type="checkbox" id="checkbox10" class="checkbox-round" />
+    <input type="checkbox" id="checkbox11" class="checkbox-round" />
+    <input type="checkbox" id="checkbox12" class="checkbox-round" />
+    <input type="checkbox" id="checkbox13" class="checkbox-round" />
+    <div class="divider"></div>
+    <input type="checkbox" id="checkbox14" class="checkbox-death" />
+</div>
+
+
+
+
+<div>
+    <span class="stunned">Оглушен</span>
+    <span class="hurt">Ранен</span>
+    <span class="neardeath">При смерти</span>
+    <span class="dead">Мертв</span>
+</div>
+
+
+
+
+<div class="stuns">
+    
+    <span class="stuns">Текущие оглушения:</span>
+    <input type="checkbox" id="checkbox15" class="checkbox-round" />
+    <input type="checkbox" id="checkbox16" class="checkbox-round" />
+    <input type="checkbox" id="checkbox17" class="checkbox-round" />
+    <input type="checkbox" id="checkbox18" class="checkbox-round" />
+    <input type="checkbox" id="checkbox19" class="checkbox-round" />
+<div class="progress-bar"> 
+    <input type="checkbox" id="checkbox20" class="checkbox-round" />
+    <input type="checkbox" id="checkbox21" class="checkbox-round" />
+</div>
+</div>
+
+
+<div class="ammo">
+    <span class="ammo">Амуниция:</span>
+    <textarea cols="230" rows="1" maxlength="47" placeholder="Ваша Амуниция" class="textammo" id="ammo"></textarea>
+</div>
+
+<label for="armor-select">Броня:</label>
+<select  id="armor-select">
+    <option value="">Без брони</option>
+    <option value="kevlar-vest">Скрытый кевларовый жилет</option>
+    <option value="police-vest">Полицейский бронежилет</option>
+    <option value="combat-suit">Боевой костюм</option>
+</select>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="mainbox">
+    <div class="box">
+                <div class="money">
+                    <span>¥:</span><br>
+                    <input id="money" type="text" maxlength="30">
+                </div>
+                <div class="division"></div>
+                <div class="stuff">
+                    <span>Предметы без веса</span><br>
+                    <textarea cols="23" rows="5" maxlength="150" placeholder="Ваш хлам" class="textstuff" id="stuff"></textarea>
+                </div>
+                <div class="division"></div>
+                <div class="outfit">
+                    <span>Обмундирование</span><br>
+                    <ol>
+                        <li>
+                            <input class="under" id="outfit1" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit2" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit3" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit4" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit5" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit6" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit7" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit8" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit9" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit10" type="text" maxlength="30">
+                        </li>
+                    </ol>
+
+                    <div class="line"></div>
+                    <div>
+                        <span class="overload">Перегружен</span>
+
+                    </div>
+
+                    <div class="line"></div>
+
+                    <ol start="11">
+                        <li>
+                            <input class="under" id="outfit11" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit12" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit13" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit14" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit15" type="text" maxlength="30">
+                        </li>   
+                    </ol>
+                    <div class="line"></div>    
+                    <div>
+                        <span class="overload">Не можешь двигаться</span>
+
+                    </div>
+                    <div class="line"></div>
+                    <ol start="16">
+                        <li>
+                            <input class="under" id="outfit16" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit17" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit18" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit19" type="text" maxlength="30">
+                        </li>
+                        <li>
+                            <input class="under" id="outfit20" type="text" maxlength="30">
+                        </li>   
+                    </ol>    
+                    
+                    <div class="line"></div>
+
+                    <div>
+                        <span class="maxoutfit">Макс. 20, если есть Сила или Мышечная матрица</span>
+
+                    </div>
+
+
+                        
+
+                
+
+
+                </div>
+                
+            </div>            
+                
+    <div class="box2">
+                <div class="background">
+                    <span>Предыстория</span><br>
+                    <textarea cols="23" rows="4" maxlength="216" placeholder="Ваша предыстория" class="textbackground" id="background"></textarea>
+                </div>
+                <div class="division"></div>
+                <div class="promotion">
+                    <span>Продвижение</span><br>
+                            <select id="promotion-select">
+                            <option value="">Сам по себе</option>
+                            <option value="zaibatsu">Дзайбацу</option>
+                            <option value="yakuza">Якудза</option>
+                            </select>
+                    <br>
+                    <div class="rank-title-container">    
+                    <div class="rank">
+                    <label  style="font-weight: normal;" for="rank-select">Ранг:</label>
+                            <select id="rank-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            </select>
+
+                            
+                    </div>  
+                    
+                    
+                    <div class="title">
+                        <span>Титул:</span>
+                        <input id="title" type="text" maxlength="30">
+                    </div>     
+                </div>
+                <div class="promo">
+                    <span>Промо-очки:</span>
+                    <input id="promo" type="text" maxlength="3">
+                </div> 
+
+                <div class="mercs">
+                    <label  style="font-weight: normal;" for="mercs-select">Бесплатные наемники:</label>
+                            <select id="mercs-select">
+                            <option value="">-</option>
+                            <option value="1">1</option>
+                            <option value="2d6+8">2d6+8</option>
+                            </select>
+
+                </div>
+
+
+                </div>
+
+                
+
+                
+
+                <div class="division"></div>
+                <div class="contacts">
+                    <span>Контакты</span><br>
+                    <textarea maxlength="810" placeholder="Ваши контакты" class="textcontacts" id="contacts"></textarea>
+                </div>
+                <div class="division"></div>
+                <div class="notes">
+                    <span>Заметки</span><br>
+                    <textarea maxlength="918" placeholder="Ваши заметки" class="textnotes" id="notes"></textarea>
+                </div>
+                
+            </div>            
+    
+        </div> 
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+    
+
+</body> 
+</html>
