@@ -1,38 +1,3 @@
-/* Код для снежинок */
-body {
-    margin: 0;
-    overflow: hidden; /* Скрыть прокрутку */
-    background-color: rgb(255, 255, 255); /* Черный фон */
-}
-
-.snowflake {
-    position: absolute;
-    background: rgb(0, 0, 0); /* Белый цвет для снежинок */
-    border-radius: 50%;
-    opacity: 0.8; /* Полупрозрачность */
-    animation: fall linear forwards; /* Анимация падения */
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(0);
-        opacity: 0.8;
-    }
-
-     100% {
-        transform: translateY(calc(100vh + 15px)); /* Падает до низа экрана */
-        opacity: 0.5; /* Исчезает внизу */
-    }
-}
-/* Код для снежинок */
-
-
-
-
-
-
-
-
 body{
     font-family: Arial, sans-serif;
     margin-top: 10px;
@@ -42,13 +7,11 @@ body{
     align-items: center;
     justify-content: center;
     
-    background-image: url(ng.jpg), url(ng1.jpg);
+    background-image: url(background.JPG), url(background1.JPG);
     background-repeat: no-repeat, no-repeat; /* Не повторять ни одно из изображений */
     background-position: left center, right center; /* Первое слева, второе справа */
     background-position: calc(0% + 70px) center, calc(100% - 10px) center;
-
-    
-    
+   
     
 
 }
