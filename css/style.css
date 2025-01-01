@@ -1,3 +1,38 @@
+/* Код для снежинок */
+body {
+    margin: 0;
+    overflow: hidden; /* Скрыть прокрутку */
+    background-color: rgb(255, 255, 255); /* Черный фон */
+}
+
+.snowflake {
+    position: absolute;
+    background: rgb(0, 0, 0); /* Белый цвет для снежинок */
+    border-radius: 50%;
+    opacity: 0.8; /* Полупрозрачность */
+    animation: fall linear forwards; /* Анимация падения */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+     100% {
+        transform: translateY(calc(100vh + 15px)); /* Падает до низа экрана */
+        opacity: 0.5; /* Исчезает внизу */
+    }
+}
+/* Код для снежинок */
+
+
+
+
+
+
+
+
 body{
     font-family: Arial, sans-serif;
     margin-top: 10px;
