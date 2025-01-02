@@ -63,29 +63,34 @@ function saveSelect(event) {
 
 // Функция для очистки localStorage
 function clearStorage() {
-    localStorage.clear(); // Очищаем localStorage
-    const inputs = document.querySelectorAll('input[type="text"], textarea');
-    inputs.forEach(input => {
-        input.value = ''; // Очищаем значения полей ввода
-    });
+    // Всплывающее предупреждение
+    const confirmClear = confirm("Вы хотите удалить этого персонажа?");
+    
+    if (confirmClear) {
+        localStorage.clear(); // Очищаем localStorage
+        const inputs = document.querySelectorAll('input[type="text"], textarea');
+        inputs.forEach(input => {
+            input.value = ''; // Очищаем значения полей ввода
+        });
 
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = false; // Сбрасываем состояние чекбоксов
-    });
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false; // Сбрасываем состояние чекбоксов
+        });
 
-    // Сбрасываем значение выпадающих списков на "Без брони"
-    const armorSelect = document.getElementById('armor-select');
-    armorSelect.value = ""; // Устанавливаем значение по умолчанию
+        // Сбрасываем значение выпадающих списков на "Без брони"
+        const armorSelect = document.getElementById('armor-select');
+        armorSelect.value = ""; // Устанавливаем значение по умолчанию
 
-    const promotionSelect = document.getElementById('promotion-select');
-    promotionSelect.value = ""; // Устанавливаем значение по умолчанию
+        const promotionSelect = document.getElementById('promotion-select');
+        promotionSelect.value = ""; // Устанавливаем значение по умолчанию
 
-    const rankSelect = document.getElementById('rank-select');
-    rankSelect.value = "0"; // Устанавливаем значение по умолчанию
+        const rankSelect = document.getElementById('rank-select');
+        rankSelect.value = "0"; // Устанавливаем значение по умолчанию
 
-    const mercsSelect = document.getElementById('mercs-select');
-    mercsSelect.value = ""; // Устанавливаем значение по умолчанию
+        const mercsSelect = document.getElementById('mercs-select');
+        mercsSelect.value = ""; // Устанавливаем значение по умолчанию
+    }
 }
 
 // Добавляем обработчик события для кнопки очистки
