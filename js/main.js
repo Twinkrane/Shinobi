@@ -151,46 +151,49 @@ function exportData() {
         data[input.id] = input.value;
     });
 
-    const json = JSON.stringify(data, null, 2); // Преобразуем объект в JSON
-    const blob = new Blob([json], { type: 'application/json' }); // Создаем Blob
-    const url = URL.createObjectURL(blob); // Создаем URL для Blob
+    const json = JSON.stringify(data, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
 
-    const a = document.createElement('a'); // Создаем ссылку для скачивания
+    const a = document.createElement('a');
     a.href = url;
-    a.download = 'character_data.json'; // Имя файла для скачивания
+    a.download = 'character_data.json';
     document.body.appendChild(a);
-    a.click(); // Имитируем клик для скачивания
-    document.body.removeChild(a); // Удаляем ссылку
+    a.click();
+    document.body.removeChild(a);
 }
 
 // Функция для загрузки данных
 function importData(event) {
     const file = event.target.files[0];
     if (!file) {
-        return; // Если файл не выбран, выходим
+        return;
     }
 
     const reader = new FileReader();
     reader.onload = function(e) {
         try {
-            const data = JSON.parse(e.target.result); // Парсим JSON
+            const data = JSON.parse(e.target.result);
             for (const key in data) {
                 const input = document.getElementById(key);
                 if (input) {
-                    input.value = data[key]; // Устанавливаем значение в поле ввода
+                    input.value = data[key];
+                    // Сохраняем загруженные значения в localStorage
+                    localStorage.setItem(key, data[key]);
                 }
             }
+            
         } catch (error) {
-            alert('Ошибка загрузки данных: ' + error.message);
+            alert('Ошибка загрузки' + error.message);
         }
     };
-    reader.readAsText(file); // Читаем файл как текст
+    reader.readAsText(file);
 }
 
 // Добавляем обработчики событий для кнопок
 document.getElementById('exportData').addEventListener('click', exportData);
 document.getElementById('importData').addEventListener('change', importData);
 document.getElementById('importDataButton').addEventListener('click', () => {
-    document.getElementById('importData').click(); // Имитируем клик на скрытом input
+    document.getElementById('importData').click();
 });
 
