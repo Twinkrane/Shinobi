@@ -135,3 +135,62 @@ mercsSelect.addEventListener('change', saveSelect);
 
 
 
+
+
+
+
+
+
+
+// Функция для выгрузки данных
+function exportData() {
+    const inputs = document.querySelectorAll('input[type="text"], textarea');
+    const data = {};
+
+    inputs.forEach(input => {
+        data[input.id] = input.value;
+    });
+
+    const json = JSON.stringify(data, null, 2); // Преобразуем объект в JSON
+    const blob = new Blob([json], { type: 'application/json' }); // Создаем Blob
+    const url = URL.createObjectURL(blob); // Создаем URL для Blob
+
+    const a = document.createElement('a'); // Создаем ссылку для скачивания
+    a.href = url;
+    a.download = 'character_data.json'; // Имя файла для скачивания
+    document.body.appendChild(a);
+    a.click(); // Имитируем клик для скачивания
+    document.body.removeChild(a); // Удаляем ссылку
+}
+
+// Функция для загрузки данных
+function importData(event) {
+    const file = event.target.files[0];
+    if (!file) {
+        return; // Если файл не выбран, выходим
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result); // Парсим JSON
+            for (const key in data) {
+                const input = document.getElementById(key);
+                if (input) {
+                    input.value = data[key]; // Устанавливаем значение в поле ввода
+                }
+            }
+        } catch (error) {
+            alert('Ошибка загрузки данных: ' + error.message);
+        }
+    };
+    reader.readAsText(file); // Читаем файл как текст
+}
+
+// Добавляем обработчики событий для кнопок
+document.getElementById('exportData').addEventListener('click', exportData);
+document.getElementById('importData').addEventListener('change', importData);
+document.getElementById('importDataButton').addEventListener('click', () => {
+    document.getElementById('importData').click(); // Имитируем клик на скрытом input
+});
+
