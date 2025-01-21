@@ -20,12 +20,36 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     margin-bottom: 5px;
-    margin-right: 100px;
+    margin-right: 130px;
 }
 
 
+
+.dice {
+    display: flex;
+    margin: 350px  -50px;
+    cursor: pointer; /* Указатель при наведении */
+    width: 50px; /* Ширина изображения кубика */
+    height: 50px; /* Высота изображения кубика */
+}
+
+#diceResults {
+    margin-top: 50px;
+    margin-left: -45px;
+    display: none; /* Скрываем результаты по умолчанию */
+    position: absolute; /* Абсолютное позиционирование */
+    background-color: white; /* Фон результатов */
+    border: 1px solid black; /* Граница */
+    padding: 10px; /* Отступы */
+    border-radius: 5px; /* Закругленные углы */
+    text-align: center; /* Центрируем текст */
+    font-size: 18px; /* Размер шрифта для результатов */
+    color: black; /* Цвет текста */
+    pointer-events: none; /* Игнорируем события мыши для этого элемента */
+    
+}
 
 .parent
 {
