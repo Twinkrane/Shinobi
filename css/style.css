@@ -33,6 +33,8 @@ body{
     cursor: pointer; /* Указатель при наведении */
     width: 50px; /* Ширина изображения кубика */
     height: 50px; /* Высота изображения кубика */
+   
+   
 }
 
 #diceResults {
@@ -48,8 +50,12 @@ body{
     font-size: 18px; /* Размер шрифта для результатов */
     color: black; /* Цвет текста */
     pointer-events: none; /* Игнорируем события мыши для этого элемента */
+    user-select: none;
+   
     
 }
+
+
 
 .parent
 {
